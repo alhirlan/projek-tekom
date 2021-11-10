@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controller\UploadFileController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -17,9 +18,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::middleware(['middleware'=>'PreventBackHistory'])->group(function () {
     Auth::routes();
@@ -45,9 +46,23 @@ Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','PreventBackHisto
     Route::get('dashboard',[UserController::class,'index'])->name('user.dashboard');
     Route::get('profile',[UserController::class,'profile'])->name('user.profile');
     Route::get('settings',[UserController::class,'settings'])->name('user.settings');
+    Route::get('calender',[UserController::class,'calender'])->name('user.calender');
+
+    Route::get('index',[UserController::class,'index'])->name('user.index');
+
+
+    Route::post('update-profile-info',[UserController::class,'updateInfo'])->name('userUpdateInfo');
+    Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
+    Route::post('change-password',[UserController::class,'changePassword'])->name('userChangePassword');
+
+    Route::post('uploadFile',[UploadFileController::class,'UploadFile'])->name('user.uploadFile');
     
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/', function () {
+    return view('homepage');
+});

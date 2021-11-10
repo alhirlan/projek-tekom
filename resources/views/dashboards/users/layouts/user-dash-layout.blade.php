@@ -71,8 +71,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column nav-legacy nav-compact nav-child-indent nav-collapse-hide-child nav-flat" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-               <li class="nav-item">
-                <a href="{{ route('admin.dashboard')}}" class="nav-link {{ (request()->is('user/dashboard*')) ? 'active' : '' }}">
+              <li class="nav-item">
+                <a href="{{ route('user.dashboard')}}" class="nav-link {{ (request()->is('user/dashboard*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-home"></i>
                   <p>
                     Dashboard
@@ -80,21 +80,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
               </li>
                <li class="nav-item">
-                <a href="{{ route('admin.profile')}}" class="nav-link {{ (request()->is('user/profile*')) ? 'active' : '' }}">
+                <a href="{{ route('user.profile')}}" class="nav-link {{ (request()->is('user/profile*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
                    Profile
                   </p>
                 </a>
               </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.settings')}}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-               Settings
-              </p>
-            </a>
-          </li>
+              <li class="nav-item">
+                <a href="{{ route('user.settings') }}" class="nav-link {{ (request()->is('user/settings*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-cog"></i>
+                  <p>
+                  Settings
+                  </p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
+                <a href="{{ route('user.calender')}}" class="nav-link {{ (request()->is('user/calender*')) ? 'active' : '' }}">
+                  <i class="nav-icon"></i>
+                  <p>
+                  Calender
+                  </p>
+                </a>
+              </li> -->
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -122,10 +130,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      HASILNYA IYAIN AJA
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="https://www.instagram.com/irlan.al/">WEB SIMORMAWA</a>.</strong> All by TEAM.
   </footer>
 </div>
 <!-- ./wrapper -->
