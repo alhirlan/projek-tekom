@@ -1,95 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="utf-8">
-	<meta name="author" content="Kodinger">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Register page</title>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+	<title>Login Form by SiPenDoa SV</title>
+	<link rel="stylesheet" type="text/css" href="css/stylelogin.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body class="my-login-page">
-	<section class="h-100">
-		<div class="container h-100">
-			<div class="row justify-content-md-center h-100">
-				<div class="card-wrapper">
-				
-					<div class="cardx fat mt-4">
-						<div class="card-body">
-							<h4 class="card-title">Register</h4>
-							<form method="POST" class="my-login-validation" autocomplete="off" action="{{ route('register') }}">
-
-								@if ( Session::get('success'))
-									 <div class="alert alert-success">
-										 {{ Session::get('success') }}
-									 </div>
-								@endif
-								@if ( Session::get('error'))
-									 <div class="alert alert-danger">
-										 {{ Session::get('error') }}
-									 </div>
-								@endif
-                                @csrf
-								<div class="form-group">
-									<label for="name">Name</label>
-									<input id="name" type="text" class="form-control" name="name"  autofocus placeholder="Enter name" value="{{ old('name') }}">
-									<span class="text-danger">@error('name'){{ $message }}@enderror</span>
-								</div>
-
-								<div class="form-group">
-									<label for="email">E-Mail Address</label>
-									<input id="email" type="email" class="form-control" name="email"  placeholder="Enter email" value="{{ old('email') }}">
-									<span class="text-danger">@error('email'){{ $message }}@enderror</span>
-								</div>
-                                <div class="form-group">
-									<label for="favoriteColor">Favorite Color</label>
-									<input id="favoriteColor" type="text" class="form-control" name="favoriteColor"  placeholder="Enter favorite color">
-									<span class="text-danger">@error('favoriteColor'){{ $message }}@enderror</span>
-								</div>
-
-								<div class="form-group">
-									<label for="password">Password</label>
-									<input id="password" type="password" class="form-control" name="password"  data-eye placeholder="Enter password">
-									<span class="text-danger">@error('password'){{ $message }}@enderror</span>
-								</div>
-                                <div class="form-group">
-									<label for="password-confirm">Confirm Password</label>
-									<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required data-eye placeholder="Enter confirm password">
-									<span class="text-danger">@error('password_confirmation'){{ $message }}@enderror</span>
-                                    
-								</div>
-
-
-								<div class="form-group">
-									<div class="custom-checkbox custom-control">
-										<input type="checkbox" name="agree" id="agree" class="custom-control-input">
-										<label for="agree" class="custom-control-label">I agree to the <a href="#">Terms and Conditions</a></label>
-										<div class="invalid-feedback">
-											You must agree with our Terms and Conditions
-										</div>
-									</div>
-								</div>
-
-								<div class="form-group m-0">
-									<button type="submit" class="btn btn-primary btn-block">
-										Register
-									</button>
-								</div>
-								<div class="mt-4 text-center">
-									Already have an account? <a href="{{route('login')}}">Login</a>
-								</div>
-							</form>
-						</div>
-					</div>
-			
-				</div>
-			</div>
+<body>
+	<img class="wave" src="images/bidongnih.png">
+	<div class="container">
+		<div class="img">
+			<img src="images/g2.png">
 		</div>
-	</section>
-
-<script src="jquery-3.4.1.min.js"></script>
-	<script src="bootstrap/js/popper.js"></script>
-	<script src="bootstrap/js/bootstrap.js"></script>
-	<script src="js/my-login.js"></script>
+		<div class="login-content">
+        <form method="POST" class="my-login-validation" autocomplete="off" action="{{ route('register') }}">
+        @csrf
+        @if ( Session::get('success'))
+			 <div class="alert alert-success">
+                    {{ Session::get('success') }}
+                </div>
+        @endif
+        @if ( Session::get('error'))
+                <div class="alert alert-danger">
+                    {{ Session::get('error') }}
+                </div>
+        @endif
+				<h2 class="form-title d-block mt-3 mb-2">Sign Up</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Name</h5>
+           		   		<input id="name" type="text" class="input" name="name"  autofocus value="{{ old('name') }}">
+                              
+						<span class="text-danger">@error('name'){{ $message }}@enderror</span>
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+					  <i class="fa fa-envelope" aria-hidden="true"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Email</h5>
+           		    	<input id="email" type="email" class="input" name="email"  value="{{ old('email') }}">
+						<span class="text-danger">@error('email'){{ $message }}@enderror</span>
+            	   </div>
+            	</div>
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input id="password" type="password" class="input" name="password"  data-eye>
+						<span class="text-danger">@error('password'){{ $message }}@enderror</span>
+            	   </div>
+            	</div>
+				<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Repeat Password</h5>
+           		    	<input id="password-confirm" type="password" class="input" name="password_confirmation" required data-eye>
+						<span class="text-danger">@error('password_confirmation'){{ $message }}@enderror</span>
+            	   </div>
+            	</div>
+            	<a href="{{route('login')}}">I am already member</a>
+            	<button type="submit" class="btn btn-primary btn-block">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/mainlogin.js"></script>
 </body>
 </html>

@@ -7,6 +7,14 @@
               <div class="card-header">
                 <h3 class="card-title">Quick Example</h3>
               </div>
+              @if (Session::has('status') == 1)
+                  <div class="alert alert-success">
+                      <button type="button" class="exit btn btn-lg text-white float-right" data-dismiss="alert" aria-label="Close" style="margin-top: -10px;">
+                          <span aria-hidden="true">×</span>
+                      </button>
+                      {{ Session::get('msg') }}
+                  </div>
+              @endif
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{ route('uploadFile') }}" method="POST" enctype="multipart/form-data">

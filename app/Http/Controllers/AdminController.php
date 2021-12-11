@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use DB;
 use App\Models\User;
 
 class AdminController extends Controller
 {
-    function index(){
-
-        return view('dashboards.admins.index');
+       function index(){
+        $laporan = DB::table('upload_files')->get();
+        //dd($laporan);
+        return view('dashboards.admins.index', ['hasil' => $laporan]);
        }
     
        function profile(){

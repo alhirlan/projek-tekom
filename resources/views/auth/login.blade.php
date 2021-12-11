@@ -11,19 +11,19 @@
 	<img class="wave" src="images/bidongnih.png">
 	<div class="container">
 		<div class="img">
-			<img src="images/bg.svg">
+			<img src="images/g2.png">
 		</div>
 		<div class="login-content">
 			<form method="POST" autocomplete="off" action="{{ route('login') }}">
 			@csrf
 				<img src="images/avatar.svg">
-				<h2 class="title">Selamat Datang</h2>
+				<h2 class="title">Sign In</h2>
            		<div class="input-div one">
            		   <div class="i">
            		   		<i class="fas fa-user"></i>
            		   </div>
            		   <div class="div">
-           		   		<h5>Username</h5>
+           		   		<h5>Email</h5>
            		   		<input id="email" type="email" class="input" name="email" value="" required autofocus>
            		   </div>
            		</div>

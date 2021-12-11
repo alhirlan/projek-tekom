@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome</title>
+    <title>Welcome SiPenDoa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,10 +22,10 @@
 
         <div class="right">
           <nav class="menu-items">
-            <a href="/views/about">About</a>
+            <a href="/about">About</a>
             <a href="#">Ormawa</a>
             <a href="#">Komdisma</a>
-            <a class="btn dark" href="#">Contact</a>
+            <a class="btn dark" href="/contact">Contact</a>
           </nav>
 
           <div class="dark-switch active">
@@ -40,13 +40,13 @@
 
       <header class="hero-section">
         <div class="left">
-          <h1>Sistem Analisis 
+          <h1>Sistem Pengesahan 
             Dokumen ORMAWA</h1>
           <p class="sub-heading">
-            Sistem ini digunakan untuk keperluan penanda tanganan, 
-            validasi dokumen, dan keperluan lainnya yang menghubungkan 
-            Ormas-ormas di SV IPB University terhubung langsung oleh 
-            pembina atau pimpinan Kampus.
+            Sistem ini digunakan untuk keperluan Pengesahan, 
+            Validasi dokumen, dan Keperluan lainnya yang menghubungkan 
+            Ormawa-ormawa di SV IPB University terhubung langsung oleh 
+            pembina serta pimpinan Kampus.
           </p>
 
           <div class="buttons">
@@ -56,7 +56,7 @@
         </div>
 
         <div class="right">
-          <img src="images/master1.png" alt="" />
+          <img src="images/master1.png"  width=98% height=80%>
         </div>
       </header>
     </div>

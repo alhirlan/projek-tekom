@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-use App\Http\Controller\UploadFileController;
+use App\Http\Controllers\UploadFileController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -34,6 +35,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>['isAdmin','auth','PreventBackHis
         Route::get('dashboard',[AdminController::class,'index'])->name('admin.dashboard');
         Route::get('profile',[AdminController::class,'profile'])->name('admin.profile');
         Route::get('settings',[AdminController::class,'settings'])->name('admin.settings');
+        Route::get('detail/view/{uploadfile}', [ViewController::class, 'view'])->name('main/view');
+        Route::delete('detail/view/{deletefile}', [ViewController::class, 'delete'])->name('main/delete');
 
 
         Route::post('update-profile-info',[AdminController::class,'updateInfo'])->name('adminUpdateInfo');
@@ -55,14 +58,21 @@ Route::group(['prefix'=>'user', 'middleware'=>['isUser','auth','PreventBackHisto
     Route::post('change-profile-picture',[UserController::class,'updatePicture'])->name('userPictureUpdate');
     Route::post('change-password',[UserController::class,'changePassword'])->name('userChangePassword');
 
-    Route::post('uploadFile',[UploadFileController::class,'UploadFile'])->name('user.uploadFile');
+    Route::post('uploadFile',[UploadFileController::class,'UploadFile'])->name('uploadFile');
     
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/', function () {
     return view('homepage');
 });
+
+Route::get('/about', function () {
+    return view('aboutcopy');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+

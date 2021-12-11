@@ -10,10 +10,10 @@ class UploadFile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id_rkat',
         'nama_kegiatan',
         'tanggal_kegiatan',
         'id_ormawa',
         'status',
+        'pengirim',
     ];
 }

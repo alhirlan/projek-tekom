@@ -15,11 +15,11 @@ class CreateUploadFilesTable extends Migration
     {
         Schema::create('upload_files', function (Blueprint $table) {
             $table->id();
-            $table->string('id_rkat')->unique();
             $table->string('nama_kegiatan');
             $table->date('tanggal_kegiatan');
             $table->string('id_ormawa')->unique();
             $table->string('status');
+            $table->string('pengirim')->nullable();
             $table->timestamps();
         });
     }
